@@ -1,7 +1,5 @@
 package com.example.scratch.model;
 
-import org.springframework.data.annotation.CreatedDate;
-
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -12,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import lombok.Data;
 
 @Data
@@ -35,4 +34,7 @@ public class User {
 
   @Enumerated(EnumType.STRING)
   private Role role;
+
+  @Transient
+  private String token;
 }

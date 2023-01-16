@@ -17,12 +17,12 @@ public class UserService implements IUserService {
   private UserRepository userRepository;
 
   @Autowired
-  private PasswordEncoder passWordEncoder;
+  private PasswordEncoder passwordEncoder;
 
 
   @Override
   public User saveUser(User user){
-    user.setPassword(passWordEncoder.encode(user.getPassword()));
+    user.setPassword(passwordEncoder.encode(user.getPassword()));
     user.setRole(Role.USER);
     user.setCreateTime(LocalDateTime.now());
 
