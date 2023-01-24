@@ -11,6 +11,8 @@ import { LoginComponent } from './guest/login/login.component';
 import { RegisterComponent } from './guest/register/register.component';
 import { ProfileComponent } from './user/profile/profile.component';
 
+import { HttpClientModule} from "@angular/common/http";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { ProfileComponent } from './user/profile/profile.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
