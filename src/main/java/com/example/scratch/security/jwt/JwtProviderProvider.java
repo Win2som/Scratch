@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+
 import java.util.Date;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -27,7 +28,7 @@ public class JwtProviderProvider implements IJwtProvider {
   private String JWT_SECRET_KEY;
 
   @Value("${app.jwt.expiration-in-ms}")
-  private String JWT_EXPIRATION_IN_MS;
+  private Long JWT_EXPIRATION_IN_MS;
 
 
   @Override

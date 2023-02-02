@@ -1,5 +1,6 @@
 package com.example.scratch.repository;
 
+import com.example.scratch.model.Role;
 import com.example.scratch.model.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -15,7 +16,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
   @Modifying
   @Query("update User set role = :role where username = :username")
-  void updateUserRole(@Param("username") String username, @Param("role") String role);
+  void updateUserRole(@Param("username") String username, @Param("role") Role role);
 
 
 }
