@@ -1,0 +1,19 @@
+/* host is an angular class that serves styles to specific components, it does not work in global style.css */
+
+:host {
+  height: 100vh;
+  display: block;
+  background-color: #f5d661;
+  border: 1px solid #f5d661;
+}
+
+/* .custom-card {
+  width: 350px;
+  max-width: 100%;
+  background-color: #eee;
+}
+
+.user-icon {
+  font-size: 100px;
+  color: #50A057;
+} */

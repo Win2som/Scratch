@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
 
-const API_URL = '${environment.BASE_URL}/api/auth/'
+const API_URL = environment.BASE_URL +'/api/auth/'
 
 @Injectable({
   providedIn: 'root'
@@ -21,10 +22,10 @@ export class AuthenticationService {
     }
 
     this.currentUserSubject = new BehaviorSubject<User>(storageUser);
-    this.currentUser = this.currentUserSubject.asObservable();
+    this.currentUser = this.currentUserSubject.asObservable();     //gets current user asynchronously(as observable)
   }
 
-
+//gets current user synchronously
   public get currentUserValue(): User {
     return this.currentUserSubject.value;
   }
